@@ -1,0 +1,986 @@
+html, body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f0f4f8;
+    background-image: url('Background/Event-bg.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    color: #1a202c;
+    line-height: 1.6;
+}
+
+/* ==========================================
+   PAGE WRAPPER
+   Centers content and limits max width
+   ========================================== */
+.page-wrapper {
+    min-height: 100dvh;
+    padding: 0 10px 0 10px;
+
+}
+
+/* ============================================= */
+/* TABLE OF CONTENTS                    */
+/* ============================================= */
+/* 1.  CUSTOM PROPERTIES (VARIABLES)
+    2.  GENERAL & RESET STYLES
+    3.  UTILITY CLASSES (CONTAINER, BUTTONS)
+    4.  HEADER STYLES
+    5.  HERO SECTION
+    6.  DETAILS SECTION
+    7.  UPCOMING EVENTS SECTION
+    8.  BOOKING SECTION (INFO & FORM)
+    9.  FOOTER STYLES
+    10. DECORATIVE BACKGROUND ELEMENTS
+    11. RESPONSIVE DESIGN (MEDIA QUERIES)
+*/
+
+
+/* ============================================= */
+/* 1. CUSTOM PROPERTIES (VARIABLES)              */
+/* ============================================= */
+:root {
+    /* Colors */
+    --clr-primary-dark: #00558C;
+    --clr-primary-med: #0077B6;
+    --clr-primary-light: #aed9ed;
+    --clr-accent: #3A96B4;
+    
+    
+    --clr-bg-light: #fff;
+    --clr-bg-input: #e0f2f7;
+    
+    --clr-text-dark: #00558C;
+    --clr-text-light: #fff;
+    --clr-text-body: #333;
+
+    /* Fonts */
+    --font-primary: 'Poppins', sans-serif;
+    
+    /* Spacing & Sizing */
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 4rem;
+
+    /* Borders & Shadows */
+    --radius-sm: 8px;
+    --radius-md: 15px;
+    --radius-pill: 50px;
+    --shadow-soft: 0 5px 15px rgba(0, 119, 182, 0.15);
+    --shadow-strong: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+
+/* ============================================= */
+/* 2. GENERAL & RESET STYLES                     */
+/* ============================================= */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-primary);
+    
+    color: var(--clr-text-body);
+    overflow-x: hidden;
+}
+
+h1, h2, h3 {
+    color: var(--clr-text-dark);
+    font-weight: 700;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+
+/* ============================================= */
+/* 3. UTILITY CLASSES (CONTAINER, BUTTONS)       */
+/* ============================================= */
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--spacing-lg);
+    padding-right: var(--spacing-lg);
+    max-height: 2500px ;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    padding: 0.8em 1.8em;
+    border: none;
+    border-radius: var(--radius-pill);
+    font-family: var(--font-primary);
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn--primary {
+    background-color: var(--clr-accent);
+    color: var(--clr-text-light);
+}
+.btn--primary:hover {
+    background-color: #2c7a95; /* Darken accent */
+}
+
+.btn--secondary {
+    padding: 0.7em 1.5em;
+    border: 1px solid var(--clr-primary-med);
+    background-color: transparent;
+    color: var(--clr-primary-med);
+    border-radius: var(--radius-sm);
+}
+.btn--secondary:hover {
+    background-color: var(--clr-primary-med);
+    color: var(--clr-text-light);
+}
+
+.btn--form {
+    width: 100%;
+    padding: var(--spacing-md);
+    background-color: var(--clr-primary-light);
+    color: var(--clr-text-dark);
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+}
+.btn--form:hover {
+    background-color: #9acbe6; /* Darken light primary */
+    transform: scale(1.02);
+}
+
+
+/* ============================================= */
+/* 4. HEADER STYLES                              */
+/* ============================================= */
+.header {
+}
+
+.header__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: var(--spacing-md);
+    padding-bottom: var(--spacing-md);
+}
+
+.header__logo-group {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.header__logo-main {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--clr-primary-dark);
+}
+
+.header__logo-sub {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--clr-primary-dark);
+    border-left: 2px solid var(--clr-primary-dark);
+    padding-left: var(--spacing-md);
+    line-height: 1.2;
+}
+
+.header__nav-links {
+    display: flex;
+    gap: var(--spacing-lg);
+}
+
+.header__nav-links a {
+    color: var(--clr-primary-med);
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.header__nav-links a:hover {
+    color: var(--clr-primary-dark);
+}
+
+
+/* ============================================= */
+/* 5. HERO SECTION                               */
+/* ============================================= */
+.hero {
+    position: relative;
+    padding: var(--spacing-xl) 0;
+    display: grid;
+    place-items: center;
+    min-height: 300px;
+    margin-top: -20px;
+}
+
+.hero__content {
+    background-color: var(--clr-primary-light);
+    padding: var(--spacing-lg) var(--spacing-xl);
+    border-radius: var(--radius-md);
+    text-align: center;
+    box-shadow: var(--shadow-soft);
+    z-index: 2;
+}
+
+.hero__title {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.hero__date {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+
+/* ============================================= */
+/* 6. DETAILS SECTION                            */
+/* ============================================= */
+.details {
+    padding: var(--spacing-xl) 0;
+    position: relative;
+}
+
+.details__grid {
+    display: grid;
+    grid-template-columns: 0.5fr 2.9fr ; /* Make the right column wider for a rectangular shape */
+    gap: var(--spacing-xl);
+    align-items: center;
+}
+
+.details__images {
+    position: relative;
+    margin-top: calc(-1 * var(--spacing-xl));
+    z-index: 2;
+}
+
+.details__image-wrapper {
+    position: relative;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-strong);
+}
+
+.details__image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.details__image-wrapper--1 {
+    width: 200px;
+    height: 180px;
+    top: 50px;
+    opacity: 0.5;
+    
+}
+
+.details__image-wrapper--2 {
+    width: 440px;
+    height: 380px;
+    margin-left: 125px; /* Increased from 50px to push the image right */
+    margin-top: -30px;
+    position: relative; /* This allows us to use the 'left' property for fine-tuning */
+}
+
+.details__image-wrapper--3 {
+    width: 200px;
+    height: 200px;
+    margin-top: -80px;
+    top: 30px;
+    opacity: 0.5;
+
+
+}
+
+.details__info {
+    background-color: var(--clr-primary-light);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
+}
+
+.details__info-title {
+    font-size: 2.2rem;
+    margin-bottom: var(--spacing-md);
+    }
+
+.details__info p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+
+/* ============================================= */
+/* 7. UPCOMING EVENTS SECTION                    */
+/* ============================================= */
+.upcoming {
+    padding: var(--spacing-xl) 0;
+    position: relative;
+}
+
+.upcoming__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-xl);
+}
+
+.upcoming__title-box {
+    background-color: var(--clr-primary-light);
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-soft);
+    z-index: 2;
+    margin-top: calc(-3 * var(--spacing-xl));
+}
+
+.upcoming__title {
+    font-size: 2.5rem;
+}
+
+.upcoming__cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+    z-index: 2;
+}
+
+.card {
+    background-color: var(--clr-primary-light);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--clr-text-dark);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0, 119, 182, 0.25);
+}
+
+.card__icon {
+    font-size: 3rem;
+    color: var(--clr-accent);
+    margin-bottom: var(--spacing-md);
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    display: grid;
+    place-items: center;
+}
+
+.card__title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+}
+
+.card__description {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+
+/* ============================================= */
+/* 8. BOOKING SECTION (INFO & FORM)              */
+/* ============================================= */
+.booking {
+    padding: var(--spacing-xl) 0;
+    position: relative;
+}
+
+.booking__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-xl);
+}
+
+.booking__info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+    width: 100%;
+}
+
+.info-box {
+    background-color: var(--clr-primary-light);
+    color: var(--clr-text-dark);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
+}
+
+.info-box__title {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 2px solid rgba(0, 85, 140, 0.2);
+}
+
+.info-box__list li {
+    line-height: 1.7;
+    margin-bottom: var(--spacing-sm);
+    padding-left: 1.5em;
+    position: relative;
+}
+
+.info-box__list li::before {
+    content: '•';
+    color: var(--clr-accent);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.form {
+    background-color: var(--clr-bg-light);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-strong);
+    width: 100%;
+    max-width: 700px;
+    z-index: 2;
+}
+
+.form__title {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: var(--spacing-lg);
+}
+
+.form__group {
+    margin-bottom: var(--spacing-md);
+}
+
+.form__label {
+    display: block;
+    font-weight: 500;
+    color: var(--clr-text-dark);
+    margin-bottom: var(--spacing-sm);
+}
+
+.form__label i {
+    margin-right: var(--spacing-sm);
+    color: var(--clr-accent);
+}
+
+.form__input {
+    width: 100%;
+    padding: 1em;
+    border: none;
+    background-color: var(--clr-bg-input);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    color: var(--clr-text-dark);
+}
+
+.form__input::placeholder {
+    color: #6da7c5;
+}
+
+select.form__input {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233A96B4' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1em center;
+    background-size: 1.2em;
+    cursor: pointer;
+}
+
+textarea.form__input {
+    resize: vertical;
+}
+
+
+/* ============================================= */
+/* 9. FOOTER STYLES                              */
+/* ============================================= */
+.footer {
+    padding: var(--spacing-xl) 0;
+    position: relative;
+    color: var(--clr-text-dark);
+    text-align: center;
+}
+
+.footer__content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-lg);
+}
+
+.footer__copyright {
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+.footer__location {
+    color: var(--clr-primary-med);
+}
+
+.footer__socials {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.footer__socials a {
+    display: grid;
+    place-items: center;
+    width: 45px;
+    height: 45px;
+    background-color: var(--clr-bg-light);
+    border-radius: 50%;
+    color: var(--clr-primary-med);
+    font-size: 1.2rem;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer__socials a:hover {
+    transform: translateY(-5px);
+    color: var(--clr-primary-dark);
+}
+
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
+    width: 100%;
+    max-width: 500px;
+}
+
+.newsletter-form__input {
+    width: 100%;
+    padding: 1em;
+    border: 1px solid #cce5f3;
+    background-color: var(--clr-bg-light);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    color: var(--clr-text-dark);
+}
+
+
+
+
+
+.hero__content--small {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ============================================= */
+/* 11. RESPONSIVE DESIGN (MEDIA QUERIES)         */
+/* ============================================= */
+
+/* Tablet - 992px and below */
+@media (max-width: 992px) {
+    .header__nav-links { display: none; } /* Example: Hide nav links for a burger menu */
+    
+    .details__grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    .details__info {
+        margin-top: var(--spacing-xl);
+    }
+    .details__images { margin-left: 0; }
+    .details__image-wrapper--2 { margin-left: 0; }
+
+    .upcoming__cards-grid,
+    .booking__info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .upcoming__title-box { margin-top: 0; }
+}
+
+/* Mobile - 576px and below */
+@media (max-width: 576px) {
+    .container {
+        padding-left: var(--spacing-md);
+        padding-right: var(--spacing-md);
+    }
+    .hero__title { font-size: 2rem; }
+    .hero__date { font-size: 1.2rem; }
+    .hero__content { padding: var(--spacing-lg); }
+
+    .details__images {
+        display: none; /* Hide complex image layout on small screens for simplicity */
+    }
+    .details__info { padding: var(--spacing-lg); }
+    .details__info-title { font-size: 1.8rem; }
+
+    .upcoming__title { font-size: 2rem; }
+    .booking__info-grid { gap: var(--spacing-md); }
+
+    .form { padding: var(--spacing-lg); }
+    .form__title { font-size: 1.8rem; }
+}
+
+/* ============================================= */
+/* 7. BOOTCAMP SECTION                           */
+/* ============================================= */
+.bootcamp {
+    padding: var(--spacing-xl) 0;
+    position: relative;
+    overflow: hidden; /* Important for containing the absolute background elements */
+}
+
+.bootcamp__grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr; /* Image takes more space */
+    align-items: center;
+    gap: var(--spacing-xl);
+    position: relative; /* To make sure text content sits above general section bg */
+    z-index: 1; /* Keep content above decorative elements specific to this section */
+}
+
+.bootcamp__image-wrapper {
+    box-shadow: var(--shadow-soft); /* Subtle shadow */
+    position: relative;
+    z-index: 2; /* Ensure image is above any patterns */
+}
+
+.bootcamp__image-wrapper img {
+    border-radius: calc(var(--radius-md) - 8px); /* Inner radius slightly smaller than container */
+    width: 100%;
+    height: auto;
+}
+
+.bootcamp__text-content {
+    /* No specific styles needed here, as the children are styled */
+    z-index: 2; /* Ensure text is above any patterns */
+}
+
+.bootcamp__title-box {
+    display: inline-block; /* Makes it wrap its content tightly */
+    background-color: var(--clr-primary-light); /* Light blue background */
+    padding: 0.8em 1.5em;
+    border-radius: var(--radius-pill); /* Pill shape */
+    box-shadow: var(--shadow-soft);
+    margin-bottom: var(--spacing-lg); /* Space below the title box */
+}
+
+.bootcamp__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--clr-text-dark);
+}
+
+.bootcamp__date {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--clr-text-dark);
+}
+
+/* --- Specific Decorative Background Elements for Bootcamp Section --- */
+
+/* This needs to be added to the common ::before/::after block in your main CSS */
+/* Add this to the .hero::before, .details::before, etc. group */
+/* .bootcamp::before, .bootcamp::after {
+    content: '';
+    position: absolute;
+    background-color: rgba(173, 217, 237, 0.5);
+    border-radius: 50%;
+    z-index: 0;
+    pointer-events: none;
+} */
+
+.bootcamp::before { /* The large half-circle at the bottom-left */
+    width: 100%;
+    height: 300px;
+    bottom: -150px;
+    left: -20%;
+    border-radius: 50% / 100px 100px 0 0;
+    background-color: rgba(173, 217, 237, 0.6);
+    transform: rotate(180deg);
+}
+
+.bootcamp::after { /* The diagonal pattern on the right */
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -10%;
+    width: 300px;
+    height: 100%;
+    background:
+        linear-gradient(45deg, rgba(173, 217, 237, 0.4) 25%, transparent 25%),
+        linear-gradient(-45deg, rgba(173, 217, 237, 0.4) 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, rgba(173, 217, 237, 0.4) 75%),
+        linear-gradient(-45deg, transparent 75%, rgba(173, 217, 237, 0.4) 75%);
+    background-size: 50px 50px; /* Size of each square in the pattern */
+    background-position: 0 0, 0 25px, 25px 25px, 25px 0;
+    transform: skewY(-10deg); /* Slight diagonal tilt */
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+/* --- Responsive Adjustments for Bootcamp Section --- */
+@media (max-width: 992px) {
+    .bootcamp__grid {
+        grid-template-columns: 1fr; /* Stack content on smaller screens */
+        text-align: center;
+        gap: var(--spacing-lg);
+    }
+    .bootcamp__title-box {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .bootcamp::after { /* Adjust diagonal pattern for smaller screens */
+        right: -20%;
+        width: 200px;
+    }
+}
+
+@media (max-width: 576px) {
+    .bootcamp__title { font-size: 2rem; }
+    .bootcamp__date { font-size: 1.2rem; }
+    .bootcamp__image-wrapper {
+        padding: 0.5rem;
+        border-width: 2px;
+    }
+    .bootcamp::before {
+        height: 200px;
+        bottom: -100px;
+    }
+    .bootcamp::after {
+        right: -30%;
+        width: 150px;
+        background-size: 30px 30px;
+    }
+}
+
+/* ============================================= */
+/* 7. EVENTS PAGES SECTIONS                      */
+/* (Recent Events & Upcoming Events)          */
+/* ============================================= */
+
+/* Main wrapper for both sections to handle common padding and background elements */
+.events-page-sections {
+    padding-top: var(--spacing-xl);
+    padding-bottom: var(--spacing-xl);
+    position: relative;
+    overflow: hidden; /* Crucial for containing floating elements and pseudo-elements */
+    z-index: 1; /* Ensure these sections sit above general page backgrounds */
+}
+
+.section-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--clr-text-dark);
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    padding-top: var(--spacing-lg); /* Space for the floating patterns above */
+    position: relative;
+    z-index: 2; /* Ensure title is above backgrounds */
+}
+
+/* --- Recent Events Section --- */
+.recent-events {
+    margin-bottom: calc(2 * var(--spacing-xl)); /* Space between recent and upcoming */
+}
+
+.recent-events__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+    z-index: 2; /* Ensure cards are above background patterns */
+    position: relative;
+}
+
+/* --- Upcoming Events Section --- */
+.upcoming-events {
+    margin-top: calc(2 * var(--spacing-xl));
+    padding-bottom: var(--spacing-xl); /* Add some padding at the bottom of this section */
+}
+
+.upcoming-events__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+    z-index: 2; /* Ensure cards are above background patterns */
+    position: relative;
+}
+
+/* --- Event Card Styling (Common to Recent and Upcoming) --- */
+.event-card {
+    background-color: var(--clr-bg-light);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 119, 182, 0.25);
+}
+
+.event-card__image-wrapper {
+    background-color: var(--clr-primary-light); /* Placeholder background if image fails */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--spacing-md);
+}
+
+.event-card__image-wrapper--small img { /* For RiseUp Summit image */
+    max-width: 80%;
+    height: auto;
+}
+
+.event-card__image-wrapper--large img { /* For images with white/transparent background */
+    max-width: 90%; /* Allow larger images to fill more space */
+    height: auto;
+}
+
+/* Specific styling for the First General Meeting Recap image in Recent Events */
+.recent-events .event-card:nth-child(2) .event-card__image-wrapper {
+    background-color: var(--clr-primary-dark); /* Dark blue background */
+    padding: var(--spacing-lg);
+}
+
+/* Specific styling for the 14th of Ramadan Iftar image in Recent Events */
+.recent-events .event-card:nth-child(3) .event-card__image-wrapper {
+    background-color: var(--clr-primary-dark); /* Dark blue background */
+    padding: var(--spacing-lg);
+}
+
+
+.event-card__content {
+    padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Allows content to take up remaining space */
+}
+
+.event-card__title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.3;
+}
+
+.event-card__date {
+    font-size: 0.95rem;
+    color: var(--clr-primary-med);
+    margin-bottom: var(--spacing-md);
+}
+
+.event-card__description {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--clr-text-body);
+    flex-grow: 1; /* Pushes the button to the bottom */
+    margin-bottom: var(--spacing-lg); /* Space before the button */
+}
+
+/* Book Event Button for Upcoming Cards */
+.btn--book {
+    align-self: flex-start; /* Aligns button to the left */
+    background-color: var(--clr-primary-light);
+    color: var(--clr-text-dark);
+    padding: 0.6em 1.2em;
+    border-radius: var(--radius-sm);
+    font-weight: 500;
+    font-size: 0.95rem;
+    margin-top: auto; /* Pushes button to the bottom if content is shorter */
+}
+
+.btn--book:hover {
+    background-color: #9acbe6; /* Darken light primary */
+    transform: scale(1.02);
+}
+
+/* ============================================= */
+/* 10. DECORATIVE BACKGROUND ELEMENTS            */
+/* ============================================= */
+/* Ensure these sections are added to the list of elements with overflow: hidden */
+.hero, .details, .events-page-sections, .booking, .footer {
+    overflow: hidden;
+}
+
+/* Common ::before for the large wavy shape */
+.events-page-sections::before {
+    content: '';
+    position: absolute;
+    width: 120%;
+    height: 300px;
+    top: -100px; /* Adjust vertical position */
+    left: -10%;
+    background-color: rgba(173, 217, 237, 0.6);
+    border-radius: 50% / 0 0 100px 100px; /* Creates the wavy top edge */
+    transform: rotate(180deg); /* Flips it to point upwards */
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Specific ::after for the zigzag pattern on the right-top */
+.events-page-sections::after {
+    content: '';
+    position: absolute;
+    top: 50px; /* Adjust vertical position */
+    right: -100px; /* Start off-screen to the right */
+    width: 250px;
+    height: 250px;
+    background:
+        linear-gradient(45deg, rgba(173, 217, 237, 0.4) 25%, transparent 25%),
+        linear-gradient(-45deg, rgba(173, 217, 237, 0.4) 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, rgba(173, 217, 237, 0.4) 75%),
+        linear-gradient(-45deg, transparent 75%, rgba(173, 217, 237, 0.4) 75%);
+    background-size: 40px 40px; /* Size of each square in the pattern */
+    background-position: 0 0, 0 20px, 20px 20px, 20px 0;
+    transform: rotate(20deg); /* Tilt the pattern */
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+/* Adjust decorative elements specific to your other sections as needed.
+   For example, if the .bootcamp::before and ::after previously controlled the *whole page's* waves,
+   you might need to make them global or re-assign them. */
+
+/* I'm assuming you have other general decorative elements (like the ones for .hero, .details, .booking, .footer)
+   and will remove any .upcoming or .bootcamp specific ones from the main decorative block. */

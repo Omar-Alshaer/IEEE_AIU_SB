@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Now - IEEE AIU Event Page</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+<body>
+<div class="page-wrapper">
+    <header class="header">
+        <nav class="header__nav container">
+            <div class="header__logo-group">
+                <img src="Logo/logo2.svg" alt="AIU Logo" class="logo" width="400" height="100">
+            </div>
+            <ul class="header__nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#events">Events</a></li>
+                <li><a href="index.html#tracks">Tracks</a></li>
+                <li><a href="index.html#about">About</a></li>
+            </ul>
+            <a href="book.html" class="btn btn--primary">Book Now</a>
+        </nav>
+    </header>
+
+    <main>
+       <section class="bootcamp">
+    <div class="bootcamp__grid container">
+        <div class="bootcamp__image-wrapper">
+            <img src="Images\bootcamp.png" alt="Students in a coding bootcamp">
+        </div>
+        <div class="bootcamp__text-content">
+            <div class="bootcamp__title-box">
+                <h2 class="bootcamp__title">Bootcamp 2025</h2>
+            </div>
+            <p class="bootcamp__date">September 20th - 25th, 2025</p>
+        </div>
+    </div>
+</section>
+
+        <section class="booking">
+            <div class="booking__content container">
+                <div class="booking__info-grid">
+                    <div class="info-box">
+                        <h3 class="info-box__title">Speakers</h3>
+                        <ul class="info-box__list">
+                            <li>Dr Mahmoud Hmady - AI professor at AIU</li>
+                            <li>Eng Eslam Younis - Ex AI Engineer At Google</li>
+                        </ul>
+                    </div>
+                    <div class="info-box">
+                        <h3 class="info-box__title">Agenda</h3>
+                        <ul class="info-box__list">
+                            <li>An introduction to our mission, various technical tracks, and the exciting projects planned for the upcoming year.</li>
+                        </ul>
+                    </div>
+                    <div class="info-box">
+                        <h3 class="info-box__title">Dates</h3>
+                        <ul class="info-box__list">
+                            <li>Friday 20th Oct: AI Workshop</li>
+                            <li>Saturday 21st Oct: Web Dev Session</li>
+                            <li>Sunday 22nd Oct: Embedded Systems</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <form class="form booking-form" action="https://formspree.io/f/xwpnzprl" method="POST">
+                    <h2 class="form__title">Book Now!</h2>
+                    <input type="hidden" name="_replyto" value="ahmawork04@gmail.com">
+                    <div class="form__group">
+                        <label for="full_name" class="form__label"><i class="fas fa-user"></i> Full Name</label>
+                        <input type="text" id="full_name" name="full_name" class="form__input" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form__group">
+                        <label for="whatsapp_number" class="form__label"><i class="fab fa-whatsapp"></i> WhatsApp Number</label>
+                        <input type="tel" id="whatsapp_number" name="whatsapp_number" class="form__input" placeholder="Enter your WhatsApp number" required>
+                    </div>
+                    <div class="form__group">
+                        <label for="email" class="form__label"><i class="fas fa-envelope"></i> Email Address</label>
+                        <input type="email" id="email" name="email" class="form__input" placeholder="Enter your email address" required>
+                    </div>
+                    <div class="form__group">
+                        <label for="select_dates" class="form__label"><i class="fas fa-calendar-alt"></i> Select Dates</label>
+                        <select id="select_dates" name="event_date" class="form__input" required>
+                            <option value="">Select a date</option>
+                            <option value="Friday 20th Sep: AI Workshop">Friday 20th Sep: AI Workshop</option>
+                            <option value="Saturday 21st Sep: Web Programming Session">Saturday 21st Sep: Web Programming Session</option>
+                            <option value="Sunday 22nd: Embedded Systems Workshop">Sunday 22nd: Embedded Systems Workshop</option>
+                        </select>
+                    </div>
+                    <div class="form__group">
+                        <label for="additional_comments" class="form__label"><i class="fas fa-comment-dots"></i> Additional Comments</label>
+                        <textarea id="additional_comments" name="message" rows="3" class="form__input" placeholder="Any additional comments or requests"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn--form">
+                        <i class="fas fa-paper-plane"></i> BOOK NOW
+                    </button>
+                    <!-- Success message that will be shown after submission -->
+                    <div class="form-success" style="display: none; color: #3b82f6; margin-top: 10px;">
+                        Thank you for booking! We'll contact you shortly.
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__content container">
+            <p class="footer__copyright">
+                © 2025 IEEE AIU Student Branch. All rights reserved. <br>
+                Developed by IEEE AIU Web Development Team
+            </p>
+            <p class="footer__location">
+                <i class="https://maps.app.goo.gl/XhEFYBiphcvvpVFX7"></i> Alamein, Marsa Matrouh, Egypt
+            </p>
+            <div class="footer__socials">
+                <a href="https://www.facebook.com/profile.php?id=61572730615650" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.linkedin.com/company/ieee-aiu-student-branch/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/ieee_aiu?igsh=MTZzZTRjNHZja3I2dg==&utm_medium=copy_link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="mailto:example@email.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+            <div class="footer__newsletter">
+                <p>Subscribe to Our Newsletter</p>
+                <form class="newsletter-form">
+                    <input type="email" class="newsletter-form__input" placeholder="Enter your email">
+                    <button type="submit" class="btn btn--secondary"><i class="fas fa-paper-plane"></i> Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </footer>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('.booking-form');
+    
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        let formData = new FormData(form);
+        let object = {};
+        formData.forEach((value, key) => { object[key] = value });
+        let json = JSON.stringify(object);
+        
+        // Send the form data to Formspree
+        fetch(form.action, {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: json
+        })
+        .then(response => {
+            if (response.ok) {
+                // Show success message
+                form.reset();
+                const successMsg = form.querySelector('.form-success');
+                successMsg.style.display = 'block';
+                
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    successMsg.style.display = 'none';
+                }, 5000);
+            } else {
+                alert('Oops! There was a problem submitting your form');
+            }
+        })
+        .catch(error => {
+            alert('Oops! There was a problem submitting your form');
+        });
+    });
+});
+</script>
+</body>
+</html>
